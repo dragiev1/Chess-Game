@@ -10,7 +10,7 @@ class Game:
         self.dragger = Dragger()
 
 
-    # Show methods
+    # blit methods
     def show_bg(self, surface):
         for row in range(ROWS):
             for col in range(COLS):
@@ -37,3 +37,16 @@ class Game:
                         img_center = col * SQSIZE + SQSIZE//2, row * SQSIZE + SQSIZE//2  # Center the image on X-axis
                         piece.texture_rect = img.get_rect(center = img_center)
                         surface.blit(img, piece.texture_rect)
+
+    
+    def show_moves(self, surface):
+        if self.dragger.dragging:
+            piece = self.dragger.piece
+            # Loop all possible moves.
+            for move in piece.moves:
+                # Show color.
+                color = '#C86464' if (move.final.row + move.final.col) % 2 == 0 else '#C84646'
+                # Make rectangle.
+                rect = (move.final.col * SQSIZE, move.final.row * SQSIZE, SQSIZE, SQSIZE)
+                # Display blit.
+                pygame.draw.rect(surface, color, rect)
