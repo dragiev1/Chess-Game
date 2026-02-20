@@ -1,51 +1,51 @@
 :root {
-  --vt-white: #ffffff;
-  --vt-white-soft: #f8f8f8;
-  --vt-white-mute: #f2f2f2;
+  --white: #ffffff;
+  --white-soft: #f8f8f8;
+  --white-mute: #f2f2f2;
 
-  --vt-black: #181818;
-  --vt-black-soft: #222222;
-  --vt-black-mute: #282828;
+  --black: #181818;
+  --black-soft: #222222;
+  --black-mute: #282828;
 
-  --vt-blue: #215487;
+  --blue: #215487;
 
-  --vt-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-divider-dark-2: rgba(84, 84, 84, 0.48);
+  --divider-light-1: rgba(60, 60, 60, 0.29);
+  --divider-light-2: rgba(60, 60, 60, 0.12);
+  --divider-dark-1: rgba(84, 84, 84, 0.65);
+  --divider-dark-2: rgba(84, 84, 84, 0.48);
 
-  --vt-text-light-1: var(--vt-indigo);
-  --vt-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-text-dark-1: var(--vt-white);
-  --vt-text-dark-2: rgba(235, 235, 235, 0.64);
+  --text-light-1: var(--indigo);
+  --text-light-2: rgba(60, 60, 60, 0.66);
+  --text-dark-1: var(--white);
+  --text-dark-2: rgba(235, 235, 235, 0.64);
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-white);
-  --color-background-soft: var(--vt-white-soft);
-  --color-background-mute: var(--vt-white-mute);
+  --color-background: var(--white);
+  --color-background-soft: var(--white-soft);
+  --color-background-mute: var(--white-mute);
 
-  --color-border: var(--vt-divider-light-2);
-  --color-border-hover: var(--vt-divider-light-1);
+  --color-border: var(--divider-light-2);
+  --color-border-hover: var(--divider-light-1);
 
-  --color-heading: var(--vt-text-light-1);
-  --color-text: var(--vt-text-light-1);
+  --color-heading: var(--text-light-1);
+  --color-text: var(--text-light-1);
 
   --section-gap: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-black);
-    --color-background-soft: var(--vt-black-soft);
-    --color-background-mute: var(--vt-black-mute);
+    --color-background: var(--black);
+    --color-background-soft: var(--black-soft);
+    --color-background-mute: var(--black-mute);
 
-    --color-border: var(--vt-divider-dark-2);
-    --color-border-hover: var(--vt-divider-dark-1);
+    --color-border: var(--divider-dark-2);
+    --color-border-hover: var(--divider-dark-1);
 
-    --color-heading: var(--vt-text-dark-1);
-    --color-text: var(--vt-text-dark-2);
+    --color-heading: var(--text-dark-1);
+    --color-text: var(--text-dark-2);
   }
 }
 

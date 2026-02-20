@@ -1,0 +1,347 @@
+.homepage {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  backdrop-filter: blur(11px);
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 12px 12px;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  height: 50px;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  align-items:flex-start;
+  color: var(--color-text);
+  transition: 0.2s ease-out;
+}
+
+.nav-text {
+  transition: 0.2s ease-out;
+}
+
+.nav-text:hover {
+  color: var(--black);
+  text-shadow: 0 0 30px var(--black);
+  transition: 0.2s ease-in;
+}
+
+/* Parallax Container */
+.parallax-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  will-change: transform;
+  filter: brightness(1) saturate(1.2);
+}
+
+.parallax-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(141, 141, 141, 0.4) 0%,
+    rgba(31, 31, 31, 0.6) 50%,
+    rgba(179, 179, 179, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-title {
+  font-size: 9rem;
+  font-weight: bolder;
+  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  line-height: 1.1;
+}
+
+.hero-ch {
+  color: var(--color-secondary);
+}
+
+.hero-yes {
+  color: var(--color-secondary);
+  font-size: 9rem;
+  display: inline-block;
+  transform: skew(-6deg);
+  text-shadow: 0 0 2px var(--color-text);
+  margin: 0 3px;
+}
+
+.hero-s {
+  color: var(--color-text);
+  margin-left: -7px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn {
+  font-size: 1.2rem;
+  padding: 2rem 5rem;
+  box-shadow: 0 0 25px var(--color-text);
+  border-radius: 9px;
+  transition: 0.2s ease-out;
+  cursor: pointer;
+  border: none;
+  color: var(--color-text);
+  
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-icon,
+.btn-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1);
+}
+
+.btn-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.btn-text {
+  opacity: 0;
+  transform: translate(-50%, 20%);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-btn:hover .btn-icon {
+  opacity: 0;
+  transform: translate(-50%, -150%);
+}
+
+.hero-btn:hover .btn-text {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* Button hover styles */
+.hero-btn:hover {
+  background-color: var(--divider-dark-1);
+  opacity: 0.95;
+  color: var(--white);
+  box-shadow: 0 0 25px var(--divider-dark-1);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: bounce 3s infinite;
+}
+
+.mouse {
+  width: 26px;
+  height: 40px;
+  border: 2px solid var(--color-text);
+  border-radius: 20px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background-color: var(--color-secondary);
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+.arrow span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--color-secondary);
+  border-right: 2px solid var(--color-secondary);
+  transform: rotate(45deg);
+  margin: -5px 0;
+  animation: arrow 2s infinite;
+}
+
+/* Content Section */
+.content-section {
+  min-height: 50vh;
+  background-color: var(--color-surface);
+  position: relative;
+  z-index: 3;
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(184, 134, 11, 0.3);
+}
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-title {
+  font-size: 3rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.content-text {
+  font-size: 1.2rem;
+  color: var(--color-dark-);
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 5rem;
+  }
+  
+  .hero-yes {
+    font-size: 5.5rem;
+  }
+  
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-cta {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .hero-yes {
+    font-size: 4rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+}
