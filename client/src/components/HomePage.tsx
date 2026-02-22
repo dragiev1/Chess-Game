@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import '../css/HomePage.css';
+import NavBar from './NavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChessKnight } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,18 +21,7 @@ const HomePage = () => {
 
   return (
     <div className="homepage">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="nav-links">
-            <a href="#home" className="nav-link icon nav-text">
-              <FontAwesomeIcon icon={faChessKnight}/>
-            </a>
-            <a href="#login" className="nav-link nav-text">LOGIN</a>
-            <a href="#play" className="nav-link nav-text">PLAY</a>
-          </div>
-        </div>
-      </nav>
+      <NavBar/>
 
       {/* Parallax Hero Section */}
       <div className="parallax-container">
@@ -58,15 +48,6 @@ const HomePage = () => {
             <FontAwesomeIcon className='btn-icon' icon={faChessKnight}/>
             <span className="btn-text">PLAY!</span>
           </button>
-        </div>
-
-        <div className="scroll-indicator">
-          <div className="mouse">
-            <div className="wheel"></div>
-          </div>
-          <div className="arrow">
-            <span></span>
-          </div>
         </div>
       </div>
 
