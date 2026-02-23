@@ -21,7 +21,7 @@ const NavBar = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
           <div className="nav-left">
-            <Link to="/home" className="nav-link icon nav-text">
+            <Link to="/" className="nav-link icon nav-text">
               <FontAwesomeIcon icon={faChessKnight} />
             </Link>
 
