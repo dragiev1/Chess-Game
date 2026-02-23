@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+.login-bg {
+  --color-background-gradient: radial-gradient(
+    circle at bottom right,
+    var(--color-background) 0%,
+    var(--color-background) 20%,
+    var(--divider-dark-1) 60%,
+    var(--color-background) 100%
+  );
+  @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+
+  background: var(--color-background-gradient);
+  background-size: 100% 100%;
+  animation: login-gradient 30s cubic-bezier(0.42, 0, 0.58, 1) forwards;
+}
+
+.login-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(150px);
+  pointer-events: none;
+}
+
+/* Background gradient movement */
+@keyframes login-gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Glass card */
+.login-card {
+  @apply relative w-90 p-8 rounded-xl backdrop-blur-2xl
+  bg-black/40;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slide-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Inputs */
+.login-input {
+  @apply w-full p-3 mt-2 rounded-lg bg-white/10
+ text-white
+  focus:outline-none
+  transition duration-300;
+}
+
+.login-input:focus {
+  border-color: var(--divider-light-1);
+  box-shadow: 0 0 5px var(--color-white);
+}
+
+/* Button */
+.login-button {
+  @apply w-full mt-6 p-3 rounded-lg opacity-60
+  bg-black/50 text-white font-semibold
+  hover:scale-105 hover:text-black hover:bg-white hover:opacity-100 transition duration-300 cursor-pointer;
+}
+
+.login-title {
+  @apply text-4xl text-white/70 text-center mb-6;
+  font-weight: 300;
+}
+
+/* Divider */
+.divider {
+  @apply flex items-center my-6 text-white/60 text-sm;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  @apply flex-1 h-px bg-white/20;
+}
+
+.divider span {
+  @apply px-4;
+}
+
+/* Google Button */
+.google-button {
+  @apply w-full flex items-center justify-center gap-3
+  p-3 rounded-lg opacity-60 bg-black/50 text-white font-medium
+  hover:scale-105 hover:text-black hover:bg-white hover:opacity-100 transition duration-300 cursor-pointer;
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.knight-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 30rem;
+  color: var(--divider-light-1);
+  transform-origin: bottom right;
+  transform: rotate(-90deg);
+  animation: knight-rotate 1.2s ease forwards;
+}
+
+@keyframes knight-rotate {
+  0% {
+    transform: rotate(-40deg) translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+    opacity: 0.8;
+  }
+}
+
+.rook-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30rem;
+  color: var(--color-background-mute);
+  animation: rook-rotate 1.3s ease forwards;
+}
+
+@keyframes rook-rotate {
+  0% {
+    transform: translateY(-100px) scaleY(-1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scaleY(-1);
+    opacity: 0.8;
+  }
+}
+

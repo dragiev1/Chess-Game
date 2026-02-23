@@ -8,7 +8,7 @@ const ContentCard = () => {
     <section className="content-section">
       <div className="content-container">
         <h2 className="content-title">~ Relive Chess Again ~</h2>
-        
+      
         <div className="grid md:grid-cols-3 gap-8 mt-16">
           {/* Learn Card */}
           <div className="card-glass">

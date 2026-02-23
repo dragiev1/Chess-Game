@@ -9,26 +9,29 @@
     transition duration-300 cursor-pointer;
 
     background-size: 160% 160%;
-    animation: gradient-enter 2s ease forwards;
+    animation: gradient-enter 10s ease infinite;
   }
   
   @keyframes gradient-enter {
-    from {
-      background-position: 100% 100%;
+    0% {
+    background-position: 0% 0%;
     }
-    to {
+    50% {
+      background-position: 50% 50%;
+    }
+    100% {
       background-position: 0% 0%;
     }
   }
 
   .img {
-    @apply mt-3 p-3;
+    @apply mt-3 p-3 fill-white
   }
 
   /* Content Section */
   .content-section {
     min-height: 50vh;
-    background-color: var(--color-surface);
+    background-color: var(--black);
     position: relative;
     z-index: 3;
     padding: 4rem 2rem;
