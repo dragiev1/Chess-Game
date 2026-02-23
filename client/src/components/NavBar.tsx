@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChessKnight } from "@fortawesome/free-solid-svg-icons";
-
+import "/src/css/NavBar.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,18 +21,18 @@ const NavBar = () => {
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
           <div className="nav-left">
-            <a href="#home" className="nav-link icon nav-text">
+            <Link to="/home" className="nav-link icon nav-text">
               <FontAwesomeIcon icon={faChessKnight} />
-            </a>
+            </Link>
 
-            <a href="#play" className="nav-links nav-text">
+            <Link to="/play" className="nav-links nav-text">
               PLAY
-            </a>
+            </Link>
           </div>
           <div className="nav-right">
-            <a href="#login" className="nav-links nav-text">
+            <Link to="/login" className="nav-links nav-text">
               LOGIN
-            </a>
+            </Link>
           </div>
         </div>
     </nav>

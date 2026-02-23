@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@layer components {
+  .card-glass {
+    @apply p-8 m-1 rounded-2xl bg-(--color-background-mute) 
+    shadow-lg shadow-(color:--color-secondary) border border-(--color-background-mute)/20
+    hover:scale-105 hover:text-shadow-(--divider-dark-1) hover:border-(--divider-dark-1)
+    hover:shadow-(color:--divider-light-1) hover:bg-(image:--color-background-gradient)
+    transition duration-300 cursor-pointer;
+
+    background-size: 160% 160%;
+    animation: gradient-enter 2s ease forwards;
+  }
+  
+  @keyframes gradient-enter {
+    from {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+
+  .img {
+    @apply mt-3 p-3;
+  }
+
+  /* Content Section */
+  .content-section {
+    min-height: 50vh;
+    background-color: var(--color-surface);
+    position: relative;
+    z-index: 3;
+    padding: 4rem 2rem;
+  }
+
+  .content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out;
+    @apply border-(--color-background-mute) rounded-2xl p-4;
+  }
+
+  .content-title {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    font-weight: 200;
+    transition: 0.2s ease-in-out;
+  }
+
+  .content-subtitle {
+    font-size: 1.75rem;
+    color: var(--color-surface);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    text-shadow: 0 0 30px white;
+  }
+
+  .content-text {
+    font-size: 1.5rem;
+    color: var(--text-dark-1);
+    margin: 0 auto;
+    line-height: 1.8;
+    font-family: "Cormorant Garamond", serif;
+  }
+}
